@@ -3,6 +3,21 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
+
+
+
 body {
-  padding-top: 56px;
+	padding-top: 56px;
 }
+
+.ftco-booking {
+	padding: 4em 0;
+	background: #fb929e;
+}
+
+.ftco-booking h3 {
+	font-size: 24px;
+	margin-bottom: 0;
+	color: #fff;
+}
+
