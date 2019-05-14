@@ -1,9 +1,7 @@
 
-<!-- BOOKING SEARCH -->
-<%@include file="./shared/searchbar.jsp"%>
 
-<!-- BREADCRUMB -->
-<%@include file="./shared/breadcrumb.jsp"%>
+
+
 
 <div class="container">
 
@@ -14,6 +12,8 @@
 
 	<!-- ORDER MENU -->
 	<div class="col-md-9">
+		<!-- BREADCRUMB -->
+		<%@include file="./shared/breadcrumb.jsp"%>
 		<ul class="nav nav-justified nav-pills">
 			<li class="nav-item"><a class="nav-link active" href="#">Active</a>
 			</li>
@@ -41,7 +41,7 @@
 								<li class="list-inline-item"><a href="#"><h4>Nugget
 											Casino Resort</h4></a></li>
 								<li class="list-inline-item text-warning"><i
-									class="fa fa-star"></i><i class="fa fa-star"></i><i
+									class="fa fa-star"></i><i class="fa fa-star"></i> <i
 									class="fa fa-star"></i><i class="fa fa-star"></i><i
 									class="fa fa-star-half"></i></li>
 								<li class="list-inline-item text-success"><i

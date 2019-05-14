@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <section class="ftco-booking">
 	<div class="container">
 		<div class="row align-items-center">
@@ -23,24 +24,24 @@
 
 
 						</div>
+						<!-- CITY -->
 						<div class="form-group mb-3 mb-lg-0 mr-4">
-							<label for="#">Room Types</label>
+							<label for="#">City</label>
 							<div class="form-field">
 								<div class="select-wrap">
 									<div class="icon">
 										<span class="ion-ios-arrow-down"></span>
 									</div>
 									<select name="" id="" class="form-control">
-										<option value="">Suite</option>
-										<option value="">Family Room</option>
-										<option value="">Deluxe Room</option>
-										<option value="">Classic Room</option>
-										<option value="">Superior Room</option>
-										<option value="">Luxury Room</option>
+
+										<c:forEach items="${cities}" var="city">
+											<option value="">${city.name }</option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>
 						</div>
+
 						<div class="form-group mb-3 mb-lg-0 mr-4">
 							<label for="#">Adults</label>
 							<div class="form-field">
@@ -78,6 +79,7 @@
 						<div class="form-group">
 							<input type="submit" value="Reserve"
 								class="btn btn-primary py-3 px-4">
+								
 						</div>
 					</div>
 				</form>

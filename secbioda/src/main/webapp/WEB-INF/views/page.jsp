@@ -29,6 +29,9 @@
 <link href="${css}/bootstrap-datepicker.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
+<link rel="stylesheet" href="${ css}/effect.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
@@ -50,21 +53,25 @@
 </script>
 </head>
 
-<body>
+
+<body background="https://upload.wikimedia.org/wikipedia/commons/9/99/Calle_de_Alcal%C3%A1_%28Madrid%29_16.jpg">
+
+
+
 
 	<div class="wrapper">
 		<!-- NAVIGATION -->
 		<%@include file="./shared/navbar.jsp"%>
 
-		
-		
+
+
 
 		<div class="content">
 			<!-- PAGE CONTENT -->
 
 			<!-- Loading home content -->
 			<c:if test="${userClickHome==true }">
-				<%@include file="home.jsp"%>
+				<%@include file="home2.jsp"%>
 			</c:if>
 
 			<!-- Load only when user clicks list your property -->
@@ -80,6 +87,11 @@
 			<!-- Load only when user clicks sign in  -->
 			<c:if test="${userClickSignin==true }">
 				<%@include file="signin.jsp"%>
+			</c:if>
+
+			<!-- Load only when user clicks city  -->
+			<c:if test="${userClickCityHotels==true }">
+				<%@include file="home.jsp"%>
 			</c:if>
 		</div>
 		<!-- FOOTER -->
