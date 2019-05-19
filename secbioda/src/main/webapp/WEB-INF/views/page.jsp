@@ -30,6 +30,7 @@
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 <link rel="stylesheet" href="${ css}/effect.css">
+<link rel="stylesheet" href="${ css}/dataTables.bootstrap.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -50,6 +51,7 @@
 
 <script>
 	window.menu = '${title}';
+	window.contextRoot='${contextRoot}'
 </script>
 </head>
 
@@ -71,7 +73,7 @@
 
 			<!-- Loading home content -->
 			<c:if test="${userClickHome==true }">
-				<%@include file="home2.jsp"%>
+				<%@include file="home.jsp"%>
 			</c:if>
 
 			<!-- Load only when user clicks list your property -->
@@ -91,7 +93,7 @@
 
 			<!-- Load only when user clicks city  -->
 			<c:if test="${userClickCityHotels==true }">
-				<%@include file="home.jsp"%>
+				<%@include file="listHotels.jsp"%>
 			</c:if>
 		</div>
 		<!-- FOOTER -->
@@ -102,6 +104,9 @@
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 		<script src="${js}/bootstrap-datepicker.js"></script>
+		<!-- DataTable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/dataTables.bootstrap.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>

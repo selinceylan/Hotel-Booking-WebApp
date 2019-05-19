@@ -3,13 +3,21 @@ package com.spring.secbiodabackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.secbiodabackend.dao.CityDAO;
 import com.spring.secbiodabackend.dto.City;
 
 @Repository("cityDAO")
+@Transactional
 public class CityDAOImpl implements CityDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	private static List<City> cities = new ArrayList<>();
 
@@ -45,21 +53,68 @@ public class CityDAOImpl implements CityDAO {
 
 	@Override
 	public List<City> list() {
-		// TODO Auto-generated method stub
-		return cities;
+		String selectActiveCity = "FROM City WHERE active = :active";
+		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCity);
+		query.setParameter("active", true);
+		return query.getResultList();
 	}
 
+	/*
+	 * Getting single category based on id
+	 */
 	@Override
 	public City get(int id) {
 
-		// enchanced for loop
-		for (City city : cities) {
-			if (city.getId() == id)
-				return city;
+		return sessionFactory.getCurrentSession().get(City.class, Integer.valueOf(id));
+
+	}
+
+	@Override
+	@Transactional
+	public boolean add(City city) {
+		try {
+			sessionFactory.getCurrentSession().persist(city);
+
+			return true;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
 		}
+	}
 
-		return null;
+	/*
+	 * Updating a single city
+	 */
+	@Override
+	public boolean update(City city) {
+		try {
+			sessionFactory.getCurrentSession().update(city);
 
+			return true;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	/*
+	 * Deleting a single city
+	 */
+	@Override
+	public boolean delete(City city) {
+
+		city.setActive(false);
+		try {
+			sessionFactory.getCurrentSession().update(city);
+
+			return true;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
 	}
 
 }

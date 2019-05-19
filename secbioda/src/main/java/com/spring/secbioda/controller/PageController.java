@@ -20,7 +20,7 @@ public class PageController {
 	public ModelAndView index() {
 		
 		ModelAndView mv= new ModelAndView("page");
-		mv.addObject("title","Home2");
+		mv.addObject("title","Home");
 		
 		//passing the list of cities
 		mv.addObject("cities",cityDAO.list());
