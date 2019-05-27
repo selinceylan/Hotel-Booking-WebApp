@@ -30,7 +30,9 @@
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 <link rel="stylesheet" href="${ css}/effect.css">
-<link rel="stylesheet" href="${ css}/dataTables.bootstrap.css">
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${css}/datatables.min.css" />
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -51,12 +53,12 @@
 
 <script>
 	window.menu = '${title}';
-	window.contextRoot='${contextRoot}'
+	window.contextRoot = '${contextRoot}'
 </script>
 </head>
 
 
-<body background="https://upload.wikimedia.org/wikipedia/commons/9/99/Calle_de_Alcal%C3%A1_%28Madrid%29_16.jpg">
+<body>
 
 
 
@@ -69,6 +71,7 @@
 
 
 		<div class="content">
+
 			<!-- PAGE CONTENT -->
 
 			<!-- Loading home content -->
@@ -95,18 +98,24 @@
 			<c:if test="${userClickCityHotels==true }">
 				<%@include file="listHotels.jsp"%>
 			</c:if>
+			<!-- Load only when user clicks hotel  -->
+			<c:if test="${userClickShowHotel==true }">
+				<%@include file="singleHotel.jsp"%>
+			</c:if>
+
 		</div>
-		<!-- FOOTER -->
-		<%@include file="./shared/footer.jsp"%>
+		
 
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.min.js"></script>
-		<script src="${js}/bootstrap.bundle.min.js"></script>
-		<script src="${js}/bootstrap-datepicker.js"></script>
-		<!-- DataTable Plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
+		<script src="${js}/bootstrap.min.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="${js}/datatables.min.js"></script>
+		<!-- DataTable Plugin -->
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>

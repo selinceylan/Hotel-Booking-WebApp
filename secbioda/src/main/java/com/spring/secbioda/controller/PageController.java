@@ -7,13 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.secbiodabackend.dao.CityDAO;
+import com.spring.secbiodabackend.dao.HotelDAO;
 import com.spring.secbiodabackend.dto.City;
+import com.spring.secbiodabackend.dto.Hotel;
 
 @Controller
 public class PageController {
 	
 	@Autowired
 	private CityDAO cityDAO;
+	
+	@Autowired
+	private HotelDAO hotelDAO;
 	
 	//HOME
 	@RequestMapping(value= {"/","/home","/index"})
@@ -54,7 +59,27 @@ public class PageController {
 			
 		}
 	
-	
+	//SHOW SINGLE HOTEL
+	@RequestMapping(value="/show/{id}/hotel")
+	public ModelAndView showSingleHotel (@PathVariable int id) {
+		ModelAndView mv = new ModelAndView ("page");
+		Hotel hotel = hotelDAO.get(id);
+		City city =null;
+		city=cityDAO.get(id);
+		
+		//update the view count
+		hotel.setViews(hotel.getViews()+1);
+		hotelDAO.update(hotel);
+		
+		mv.addObject("title",hotel.getName());
+		
+		mv.addObject ("hotel",hotel);
+		mv.addObject("city",city);
+		mv.addObject("userClickShowHotel",true);
+		
+		
+		return mv;
+	}
 	
 	//LIST YOUR PROPERTY
 	@RequestMapping(value= {"/listyourproperty"})
@@ -88,5 +113,7 @@ public class PageController {
 		return mv;
 		
 	}
+	
+	
 
 }

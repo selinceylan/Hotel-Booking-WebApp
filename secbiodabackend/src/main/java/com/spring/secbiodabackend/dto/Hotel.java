@@ -59,6 +59,17 @@ public class Hotel {
 	@Column (name="owner_id")
 	@JsonIgnore
 	private int ownerId;
+	
+	private int views;
+	
+
+	public int getViews() {
+		return views;
+	}
+
+	public void setViews(int views) {
+		this.views = views;
+	}
 
 	public int getId() {
 		return id;
@@ -163,6 +174,10 @@ public class Hotel {
 				+ ", imageURL3=" + imageURL3 + ", active=" + active + ", cityId=" + cityId + ", ownerId=" + ownerId
 				+ "]";
 	}
+
+
+
+	
 
 	
 	

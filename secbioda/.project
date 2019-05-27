@@ -34,4 +34,21 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/assets/css/dataTables.bootstrap.css</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DataTables-1.10.18/css/dataTables.bootstrap.css</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/assets/js/dataTables.bootstrap.js</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DataTables-1.10.18/js/dataTables.bootstrap.js</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/assets/js/jquery.dataTables.js</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/DataTables-1.10.18/js/jquery.dataTables.js</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
