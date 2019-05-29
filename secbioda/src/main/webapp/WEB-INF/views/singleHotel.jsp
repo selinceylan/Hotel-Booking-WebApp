@@ -9,7 +9,7 @@
 
 						<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
 						<li class="breadcrumb-item"><a
-							href="${contextRoot}/show/city/${city.id}/hotels">${city.name }</a></li>
+							href="${contextRoot}/show/city/${hotel.cityId}/hotels">${city.name}</a></li>
 						<li class="breadcrumb-item">${hotel.name }</li>
 
 
@@ -20,6 +20,7 @@
 	</section>
 	<div class="col-md-9">
 		<h1>${hotel.name }</h1>
+		<h3>Star:${hotel.star} Rating:${hotel.rating}</h3>
 		<!-- -----------------IMAGE SLIDER------------------------- -->
 		<div id="carousel1_indicator" class="carousel slide"
 			data-ride="carousel">
@@ -54,85 +55,110 @@
 			</a>
 		</div>
 	</div>
+	<hr>
 	<!-- -------TABS -->
-	<!-- Tabs -->
-	<section id="tabs">
-		<div class="container">
-			<hr>
-			<div class="row">
-				<div class="col-xs-12 ">
-					<nav>
-						<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-							<a class="nav-item nav-link active" id="nav-home-tab"
-								data-toggle="tab" href="#nav-home" role="tab"
-								aria-controls="nav-home" aria-selected="true">General Information</a> <a
-								class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-								href="#nav-profile" role="tab" aria-controls="nav-profile"
-								aria-selected="false">Availability</a> <a class="nav-item nav-link"
-								id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
-								role="tab" aria-controls="nav-contact" aria-selected="false">Review</a>
-							
-						</div>
-					</nav>
-					<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-						<div class="tab-pane fade show active" id="nav-home"
-							role="tabpanel" aria-labelledby="nav-home-tab">Et et
-							consectetur ipsum labore excepteur est proident excepteur ad
-							velit occaecat qui minim occaecat veniam. Fugiat veniam
-							incididunt anim aliqua enim pariatur veniam sunt est aute sit
-							dolor anim. Velit non irure adipisicing aliqua ullamco irure
-							incididunt irure non esse consectetur nostrud minim non minim
-							occaecat. Amet duis do nisi duis veniam non est eiusmod tempor
-							incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit
-							culpa nisi culpa non adipisicing reprehenderit do dolore. Duis
-							reprehenderit occaecat anim ullamco ad duis occaecat ex.</div>
-						<div class="tab-pane fade" id="nav-profile" role="tabpanel"
-							aria-labelledby="nav-profile-tab">Et et consectetur ipsum
-							labore excepteur est proident excepteur ad velit occaecat qui
-							minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim
-							pariatur veniam sunt est aute sit dolor anim. Velit non irure
-							adipisicing aliqua ullamco irure incididunt irure non esse
-							consectetur nostrud minim non minim occaecat. Amet duis do nisi
-							duis veniam non est eiusmod tempor incididunt tempor dolor ipsum
-							in qui sit. Exercitation mollit sit culpa nisi culpa non
-							adipisicing reprehenderit do dolore. Duis reprehenderit occaecat
-							anim ullamco ad duis occaecat ex.</div>
-						<div class="tab-pane fade" id="nav-contact" role="tabpanel"
-							aria-labelledby="nav-contact-tab">Et et consectetur ipsum
-							labore excepteur est proident excepteur ad velit occaecat qui
-							minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim
-							pariatur veniam sunt est aute sit dolor anim. Velit non irure
-							adipisicing aliqua ullamco irure incididunt irure non esse
-							consectetur nostrud minim non minim occaecat. Amet duis do nisi
-							duis veniam non est eiusmod tempor incididunt tempor dolor ipsum
-							in qui sit. Exercitation mollit sit culpa nisi culpa non
-							adipisicing reprehenderit do dolore. Duis reprehenderit occaecat
-							anim ullamco ad duis occaecat ex.</div>
-						<div class="tab-pane fade" id="nav-about" role="tabpanel"
-							aria-labelledby="nav-about-tab">Et et consectetur ipsum
-							labore excepteur est proident excepteur ad velit occaecat qui
-							minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim
-							pariatur veniam sunt est aute sit dolor anim. Velit non irure
-							adipisicing aliqua ullamco irure incididunt irure non esse
-							consectetur nostrud minim non minim occaecat. Amet duis do nisi
-							duis veniam non est eiusmod tempor incididunt tempor dolor ipsum
-							in qui sit. Exercitation mollit sit culpa nisi culpa non
-							adipisicing reprehenderit do dolore. Duis reprehenderit occaecat
-							anim ullamco ad duis occaecat ex.Et et consectetur ipsum
-							labore excepteur est proident excepteur ad velit occaecat qui
-							minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim
-							pariatur veniam sunt est aute sit dolor anim. Velit non irure
-							adipisicing aliqua ullamco irure incididunt irure non esse
-							consectetur nostrud minim non minim occaecat. Amet duis do nisi
-							duis veniam non est eiusmod tempor incididunt tempor dolor ipsum
-							in qui sit. Exercitation mollit sit culpa nisi culpa non
-							adipisicing reprehenderit do dolore. Duis reprehenderit occaecat
-							anim ullamco ad duis occaecat ex.</div>
-					</div>
+	<div class="container">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#home">General Information</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#menu1">Availability</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#menu2">Review</a></li>
+		</ul>
 
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div id="home" class="container tab-pane active">
+				<br>
+				<div class="container">
+					<div class="panel panel-default">
+						<div class="panel-heading">Description</div>
+						<div class="panel-body">${hotel.description}</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">Address</div>
+						<div class="panel-body">${hotel.address}</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">Facilities</div>
+						<div class="panel-body">${hotel.facilities}</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">Check In-Check Out</div>
+						<div class="panel-body">Check In: ${hotel.checkIn} Check
+							Out: ${hotel.checkOut}</div>
+					</div>
 				</div>
 			</div>
+			<div id="menu1" class="container tab-pane fade">
+				<br>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="fld-193"
+								title="Date of the first subject's first study visit">Check
+								in date:</label> <input type="date" class="form-control" id="fld-193"
+								name="fld-193" value="" placeholder="YYYY-MM-DD" /> <label
+								for="fld-199"
+								title="Date the report from PI to NIDCR_Reports is due.  Every 6-months unless otherwise specified.">Check
+								out date:</label> <input type="date" class="form-control" id="fld-199"
+								name="fld-199" value="" placeholder="YYYY-MM-DD" /> <br>
+
+
+						</div>
+
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th scope="col">Sleeps</th>
+							<th scope="col">Room Types</th>
+							<th scope="col">Number of Room</th>
+							<th scope="col">Price</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${rooms }" var="room">
+							<tr>
+								<th><img src="${room.imageURL1}" height="100" width="100"></th>
+								<th>${room.sleeps }</th>
+								<th scope="col">${room.roomType}</th>
+								<!-- Check quantity is equal zero or not -->
+								<c:choose>
+									<c:when test="${room.quantity <1}">
+										<th scope="col"><span style="color:red">Sold Out</span></th>
+										<th scope="col">${room.price }</th>
+										<th scope="col"><button href="javascript:void(0)" type="submit"
+										class="btn btn-success disabled"><strike>Check availability</strike></button></th>
+									</c:when>
+									<c:otherwise>
+										<th scope="col">${room.quantity}</th>
+										<th scope="col">${room.price }</th>
+										<th scope="col"><button type="submit"
+										class="btn btn-success">Check availability</button></th>
+									</c:otherwise>
+								</c:choose>
+								
+								
+							</tr>
+					</tbody>
+				</table>
+				</c:forEach>
+			</div>
+
+
+
+			<div id="menu2" class="container tab-pane fade">
+				<br>
+				<h3>REVIEW</h3>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+			</div>
 		</div>
-	</section>
-	<!-- ./Tabs -->
+	</div>
 </div>

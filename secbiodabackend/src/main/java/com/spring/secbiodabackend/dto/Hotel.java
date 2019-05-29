@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -27,7 +29,7 @@ public class Hotel {
 	private String description;
 	
 	@Column
-	
+	@JsonIgnore
 	private String address;
 	
 	@Column
@@ -52,10 +54,55 @@ public class Hotel {
 	@JsonIgnore
 	private boolean active;
 	
+	private String distance;
+	
+	@Column(name="check_in")
+	@JsonIgnore
+	private String checkIn;
+	
+	@Column(name="check_out")
+	@JsonIgnore
+	private String checkOut;
+	
+	@JsonIgnore
+	private String facilities;
+	
 	@Column (name="city_id")
 	@JsonIgnore
 	private int cityId;
 	
+	public String getDistance() {
+		return distance;
+	}
+
+	public void setDistance(String distance) {
+		this.distance = distance;
+	}
+
+	public String getCheckIn() {
+		return checkIn;
+	}
+
+	public void setCheckIn(String checkIn) {
+		this.checkIn = checkIn;
+	}
+
+	public String getCheckOut() {
+		return checkOut;
+	}
+
+	public void setCheckOut(String checkOut) {
+		this.checkOut = checkOut;
+	}
+
+	public String getFacilities() {
+		return facilities;
+	}
+
+	public void setFacilities(String facilities) {
+		this.facilities = facilities;
+	}
+
 	@Column (name="owner_id")
 	@JsonIgnore
 	private int ownerId;

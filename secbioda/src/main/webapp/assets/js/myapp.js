@@ -48,7 +48,7 @@ $(function() {
 					
 				},
 				{
-					data:'address',
+					data:'distance',
 					
 				},
 				{

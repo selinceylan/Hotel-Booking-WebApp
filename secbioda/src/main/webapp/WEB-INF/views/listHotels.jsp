@@ -22,7 +22,7 @@
 					<tr>
 						<th></th>
 						<th>Name</th>
-						<th>Address</th>
+						<th>Distance</th>
 						<th>Star</th>
 						<th>Rating</th>
 						<th></th>
@@ -34,7 +34,7 @@
 					<tr>
 						<th></th>
 						<th>Name</th>
-						<th>Address</th>
+						<th>Distance</th>
 						<th>Star</th>
 						<th>Rating</th>
 						<th></th>

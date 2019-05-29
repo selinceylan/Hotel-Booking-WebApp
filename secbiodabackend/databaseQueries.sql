@@ -44,6 +44,10 @@ image_url_1 VARCHAR(300),
 image_url_2 VARCHAR(300),
 image_url_3 VARCHAR(300),
 is_active boolean,
+distance VARCHAR(100),
+check_in VARCHAR(20),
+check_out VARCHAR(20),
+facilities TEXT,
 city_id int,
 owner_id int,
 views INT DEFAULT 0,
@@ -56,3 +60,19 @@ constraint fk_hotel_owner_id foreign key (owner_id) references user_detail(id),
 
 insert into hotel (name,description,address,star,rating,image_url_1,image_url_2,image_url_3,is_active,city_id,owner_id)
 values ('Petit Palace Alcalá','Set inside a 1930s skyscraper and one of Madrid''s most emblematic buildings, Petit Palace Alcala is located just 250 m from Puerta del Sol.','Vírgen de los peligros 2 (esquina Alcala 23), Madrid City Center, 28013 Madrid, Spain ','4','8.2','https://r-ak.bstatic.com/images/hotel/max1280x900/136/136581776.jpg','https://r-ak.bstatic.com/images/hotel/max1280x900/184/184924783.jpg','https://r-ak.bstatic.com/images/hotel/max1280x900/184/184923744.jpg',true,1,3)
+
+
+create table room(
+id IDENTITY,
+sleeps VARCHAR(100),
+room_type  VARCHAR(100),
+price  VARCHAR(100),
+image_url_1 VARCHAR(300),
+image_url_2 VARCHAR(300),
+is_active boolean,
+hotel_id int,
+quantity INT,
+constraint pk_oda_id primary key (id),
+constraint fk_oda_hotel_id foreign key (hotel_id) references hotel (id),
+
+);
