@@ -15,6 +15,7 @@
 				<li id="register" class="nav-item"><a class="nav-link" href="${contextRoot }/register">Register</a>
 				</li>
 				<li id="signin" class="nav-item"><a class="nav-link" href="${contextRoot }/signin">Sign In</a></li>
+				<li id="manageHotels" class="nav-item"><a class="nav-link" href="${contextRoot }/manage/hotels">Manage Hotels</a></li>
 			</ul>
 		</div>
 	</div>

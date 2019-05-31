@@ -6,71 +6,75 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Hotel {
-	
+
 	/*
 	 * Private Fields
-	 * */
-	
+	 */
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column
 	private String name;
-	
-	@Column 
-	
+
+	@Column
+
 	private String description;
-	
+
 	@Column
 	@JsonIgnore
 	private String address;
-	
+
 	@Column
 	private String star;
-	
-	@Column 
+
+	@Column
 	private String rating;
-	
-	@Column(name="image_url_1")
-	
+
+	@Column(name = "image_url_1")
+
 	private String imageURL1;
-	
-	@Column (name="image_url_2")
+
+	@Column(name = "image_url_2")
 	@JsonIgnore
 	private String imageURL2;
-	
-	@Column (name="image_url_3")
+
+	@Column(name = "image_url_3")
 	@JsonIgnore
 	private String imageURL3;
-	
-	@Column(name="is_active")
+
+	@Column(name = "is_active")
 	@JsonIgnore
 	private boolean active;
-	
+
 	private String distance;
-	
-	@Column(name="check_in")
+
+	@Column(name = "check_in")
 	@JsonIgnore
 	private String checkIn;
-	
-	@Column(name="check_out")
+
+	@Column(name = "check_out")
 	@JsonIgnore
 	private String checkOut;
-	
+
 	@JsonIgnore
 	private String facilities;
-	
-	@Column (name="city_id")
+
+	@Column(name = "city_id")
 	@JsonIgnore
 	private int cityId;
-	
+
+	@Column(name = "owner_id")
+	@JsonIgnore
+	private int ownerId;
+
+	private int views;
+
 	public String getDistance() {
 		return distance;
 	}
@@ -102,13 +106,6 @@ public class Hotel {
 	public void setFacilities(String facilities) {
 		this.facilities = facilities;
 	}
-
-	@Column (name="owner_id")
-	@JsonIgnore
-	private int ownerId;
-	
-	private int views;
-	
 
 	public int getViews() {
 		return views;
@@ -222,10 +219,4 @@ public class Hotel {
 				+ "]";
 	}
 
-
-
-	
-
-	
-	
 }

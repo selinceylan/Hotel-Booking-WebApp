@@ -104,6 +104,10 @@
 			<c:if test="${userClickShowHotel==true }">
 				<%@include file="singleHotel.jsp"%>
 			</c:if>
+			<!-- Load only when user clicks manage hotels  -->
+			<c:if test="${userClickManageHotels==true }">
+				<%@include file="manageHotels.jsp"%>
+			</c:if>
 
 		</div>
 		
